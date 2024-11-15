@@ -1,5 +1,20 @@
 // models/hoot.js
 
+const mongoose = require('mongoose');
+
+/* The child of User, nested inside of hoot schema */
+
+const commentSchema = new mongoose.Schema(
+  {
+    text: {
+      type: String,
+      required: true
+    },
+    author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+  },
+  { timestamps: true }
+);
+
 const hootSchema = new mongoose.Schema(
     {
       title: {
@@ -20,17 +35,6 @@ const hootSchema = new mongoose.Schema(
     },
     { timestamps: true }
 );
-
-const commentSchema = new mongoose.Schema(
-    {
-      text: {
-        type: String,
-        required: true
-      },
-      author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
-    },
-    { timestamps: true }
-  );
   
 const Hoot = mongoose.model('Hoot', hootSchema);
   
