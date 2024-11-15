@@ -1,0 +1,9 @@
+{
+  "user": {
+    "username": "Black Panther",
+    "_id": "6737693b5077e0f37016fbcd",
+    "__v": 0
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJsYWNrIFBhbnRoZXIiLCJfaWQiOiI2NzM3NjkzYjUwNzdlMGYzNzAxNmZiY2QiLCJpYXQiOjE3MzE2ODQ2Njh9.8pHXayra95rzNLC3Zl8Qbnp7dsF3Lxd48MdwsHbxevg"
+} pass: 1234
+
