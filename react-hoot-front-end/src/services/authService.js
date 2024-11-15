@@ -2,7 +2,7 @@
 
 import axios from "axios"
 
-const BACKEND_URL = import.meta.env.VITE_EXPRESS_BACKEND_URL; // The Express API url
+const BACKEND_URL = import.meta.env.VITE_EXPRESS_BACKEND_URL // The Express API url
 
 /* Allows new user to sign up */
 async function signup(formData) {
@@ -15,10 +15,10 @@ async function signup(formData) {
         }
 
         if (response.data.token) {
-            localStorage.setItem('token', response.data.token); // Stores the JWT token into the browser's localStorage
+            localStorage.setItem('token', response.data.token) // Stores the JWT token into the browser's localStorage
 
             const user = JSON.parse(atob(response.data.token.split('.')[1]))
-            return user;
+            return user
         }
 
     } catch (error) {
@@ -38,10 +38,10 @@ async function signin(user) {
 
         /* Takes "Bearer" out of the token response */
         if (response.data.token) {
-            localStorage.setItem('token', response.data.token); // Stores the JWT token into the browser's localStorage
+            localStorage.setItem('token', response.data.token) // Stores the JWT token into the browser's localStorage
 
             const user = JSON.parse(atob(response.data.token.split('.')[1]))
-            return user;
+            return user
         }
 
         return response.data
@@ -54,14 +54,14 @@ async function signin(user) {
 /* Will check if the user has signed in on a previous session, if so, loads their profile no problem. If not, sets to null */
 function getUser() {
 
-    const token = localStorage.getItem('token');
-    if (!token) return null;
-    const user = JSON.parse(atob(token.split('.')[1]));
-    return user;
+    const token = localStorage.getItem('token')
+    if (!token) return null
+    const user = JSON.parse(atob(token.split('.')[1]))
+    return user
 }
 
 function signout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('token')
 }
 
 export { signup, signin, getUser, signout }

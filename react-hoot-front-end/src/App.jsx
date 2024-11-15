@@ -1,21 +1,21 @@
-import { useState, createContext } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar';
-import Landing from './components/Landing/Landing';
-import Dashboard from './components/Dashboard/Dashboard';
-import SignupForm from './components/SignupForm/SignupForm';
-import SigninForm from './components/SigninForm/SigninForm';
-import * as authService from '../src/services/authService'; // import the authservice
+import { useState, createContext } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import NavBar from './components/NavBar/NavBar'
+import Landing from './components/Landing/Landing'
+import Dashboard from './components/Dashboard/Dashboard'
+import SignupForm from './components/SignupForm/SignupForm'
+import SigninForm from './components/SigninForm/SigninForm'
+import * as authService from '../src/services/authService' // import the authservice
 
-export const AuthedUserContext = createContext(null);
+export const AuthedUserContext = createContext(null)
 
 const App = () => {
-  const [user, setUser] = useState(authService.getUser()); // using the method from authservice
+  const [user, setUser] = useState(authService.getUser()) // using the method from authservice
 
   const handleSignout = () => {
-    authService.signout();
-    setUser(null);
-  };
+    authService.signout()
+    setUser(null)
+  }
 
   return (
     <>
@@ -32,7 +32,7 @@ const App = () => {
         </Routes>
       </AuthedUserContext.Provider>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

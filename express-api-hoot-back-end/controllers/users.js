@@ -31,7 +31,7 @@ router.post('/signup', async (req, res) => {
         const token = jwt.sign(
             { username: user.username, _id: user._id },
             process.env.JWT_SECRET
-          );
+          )
 
         res.status(201).json({ user, token })
 
@@ -48,7 +48,7 @@ router.post('/signin', async (req, res) => {
     const existingUserPassword = req.body.password
 
     try {
-      const user = await User.findOne({ username: existingUserName });
+      const user = await User.findOne({ username: existingUserName })
       // If user exists, AND their entered password matches the hashed password, let them in
 
       if (user && bcrypt.compareSync(existingUserPassword, user.hashedPassword)) {
@@ -59,11 +59,11 @@ router.post('/signin', async (req, res) => {
         res.status(200).json({ token })
 
       } else { // Otherwise, don't let them in
-        res.status(401).json({ error: 'Invalid username or password.' });
+        res.status(401).json({ error: 'Invalid username or password.' })
       }
 
     } catch (error) {
-      res.status(400).json({ error: error.message });
+      res.status(400).json({ error: error.message })
     }
   })
 

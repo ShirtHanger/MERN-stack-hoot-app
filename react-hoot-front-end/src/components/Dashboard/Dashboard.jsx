@@ -1,8 +1,8 @@
-import { AuthedUserContext } from '../../App';
-import { useContext } from 'react';
+import { AuthedUserContext } from '../../App'
+import { useContext } from 'react'
 
 const Dashboard = ({}) => {
-  const user = useContext(AuthedUserContext);
+  const user = useContext(AuthedUserContext)
   return (
     <main>
       <h1>Welcome, {user.username}</h1>
@@ -11,7 +11,7 @@ const Dashboard = ({}) => {
         of all of your things.
       </p>
     </main>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

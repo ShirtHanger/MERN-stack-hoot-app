@@ -7,7 +7,7 @@ const Landing = () => {
         and see your super secret dashboard.
       </h3>
     </main>
-  );
-};
+  )
+}
 
-export default Landing;
+export default Landing
