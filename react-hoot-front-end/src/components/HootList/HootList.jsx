@@ -1,6 +1,6 @@
 // src/components/HootList/HootList.jsx
 
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 
 
@@ -22,10 +22,10 @@ return (
         </Link>
       ))}
     </main>
-);
+)
 
-};
+}
 
 
-export default HootList;
+export default HootList
   
